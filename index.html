@@ -36,7 +36,7 @@
                 redirect: 'follow'
             };
             // make API call
-            fetch("https://mbxtnnqhz3.execute-api.us-west-2.amazonaws.com/dev", requestOptions)
+            fetch("https://00ejr5ew79.execute-api.us-east-1.amazonaws.com/dev", requestOptions)
                 .then(response => response.text())
                 .then(result => alert(JSON.parse(result).body))
                 .catch(error => console.log('error', error));
