@@ -4,44 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Serverless web app - Amplify Hosting</title>
-    <!-- Add some CSS to change client UI -->
     <style>
         body {
-            background-color: #232F3E;
+            background-color: #d07eee;
         }
 
         label,
         button {
-            color: #FF9900;
+            color: #0b15d2;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
             margin-left: 40px;
         }
 
         input {
-            color: #232F3E;
+            color: #000000;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
             margin-left: 20px;
         }
     </style>
     <script>
-        // define the callAPI function that takes a first name and last name as parameters
         var callAPI = (firstName, lastName) => {
-            // instantiate a headers object
             var myHeaders = new Headers();
-            // add content type header to object
             myHeaders.append("Content-Type", "application/json");
-            // using built in JSON utility package turn object to string and store in a variable
             var raw = JSON.stringify({ "firstName": firstName, "lastName": lastName });
-            // create a JSON object with parameters for API call and store in a variable
             var requestOptions = {
                 method: 'POST',
                 headers: myHeaders,
                 body: raw,
                 redirect: 'follow'
             };
-            // make API call with parameters and use promises to get response
+            // make API call
             fetch("https://mbxtnnqhz3.execute-api.us-west-2.amazonaws.com/dev", requestOptions)
                 .then(response => response.text())
                 .then(result => alert(JSON.parse(result).body))
@@ -52,14 +46,15 @@
 
 <body>
     <form>
-        <label>First Name :</label>
-        <input type="text" id="fName">
-        <label>Last Name :</label>
-        <input type="text" id="lName">
-        <!-- set button onClick method to call function we defined passing input values as parameters -->
+        <br>
+        <label>First Name</label>
+        <input type="text" id="firstName"><br>
+        <br>
+        <label>Last Name</label>
+        <input type="text" id="lastName"><br>
+        <br>
         <button type="button"
-            onclick="callAPI(document.getElementById('fName').value,document.getElementById('lName').value)">Call
-            API</button>
+            onclick="callAPI(document.getElementById('firstName').value,document.getElementById('lastName').value)">Click Here</button>
     </form>
 </body>
 
