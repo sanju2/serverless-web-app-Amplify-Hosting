@@ -36,7 +36,7 @@
                 redirect: 'follow'
             };
             // make API call
-            fetch("https://ruavhr4xad.execute-api.us-east-2.amazonaws.com/dev", requestOptions)
+            fetch("APIGatewayURL", requestOptions)
                 .then(response => response.text())
                 .then(result => alert(JSON.parse(result).body))
                 .catch(error => console.log('error', error));
