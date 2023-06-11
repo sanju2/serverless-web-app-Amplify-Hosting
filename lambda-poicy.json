@@ -12,7 +12,7 @@
                 "dynamodb:Query",
                 "dynamodb:UpdateItem"
             ],
-            "Resource": "dynamodb_arn"
+            "Resource": "arn:aws:dynamodb:us-east-2:102791069024:table/simple-web"
         }
         ]
     }
