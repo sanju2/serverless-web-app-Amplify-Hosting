@@ -3,7 +3,7 @@ import boto3
 import time
 
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('simple-web')
+table = dynamodb.Table('{{Dyanmodb-table-name}}')
 
 def lambda_handler(event, context):
     gmt_time = time.gmtime()
